@@ -145,6 +145,7 @@ android {
             universalApk false  // If true, also generate a universal APK
             include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
         }
+        
     }
     signingConfigs {
         debug {
@@ -153,6 +154,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+      storeFile file('yousef.keystore')
+      storePassword 'yousef123456'
+      keyAlias 'yousef'
+      keyPassword 'yousef123456'
+    }
     }
     buildTypes {
         debug {
