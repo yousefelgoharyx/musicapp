@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Page from "../components/Page";
 import ProfileOption from "../components/ProfileOption";
 import ProfileInfo from "../components/ProfileInfo";
@@ -19,6 +19,7 @@ const Home = () => {
 };
 
 const MainStack = ({ navigation }) => {
+  const [autoplay, setAutoplay] = useState(true)
   return (
     <Page title="Profile">
       <ProfileHead />
@@ -35,7 +36,7 @@ const MainStack = ({ navigation }) => {
       <ProfileInfo title="Password" subtitle="Change your password" />
       <ProfileInfo title="Version" subtitle="8.6.14.975" />
       <ProfileInfo title="Support" subtitle="Send us an email" />
-      <ProfileOption isOpen={true}>Autoplay</ProfileOption>
+      <ProfileOption isOpen={autoplay} onSwitch={() => setAutoplay(!autoplay)}>Autoplay</ProfileOption>
       <ProfileOption isOpen={true}>Explicit content</ProfileOption>
       <ProfileOption isOpen={true}>Automix</ProfileOption>
       <ProfileOption isOpen={true}>Show unplayable songs</ProfileOption>

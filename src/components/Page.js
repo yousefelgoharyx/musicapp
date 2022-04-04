@@ -43,7 +43,7 @@ const Page = (props) => {
   }
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         {head}
         {props.children}
